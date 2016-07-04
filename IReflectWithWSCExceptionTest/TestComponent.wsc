@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" ?>
+<?component error="false" debug="false" ?>
+<package>
+
+	<component id="TestComponent">
+		<registration progid="ETWP.TestComponent" description="TestComponent" version="1" />
+
+		<public>
+			<property name="Response" />
+			<method name="Go" />
+
+		</public>
+
+		<script language="VBScript">
+			<![CDATA[
+
+				Dim Response
+			
+				Function Go()
+					Response.Write "Hi (1)!"
+					
+					Dim x: Set x = Response.CreateObject("ETWP.TestComponent2")
+					Response.Write TypeName(x)
+					Set x.Response = Response
+          
+					x.Go
+				End Function
+			
+			]]>
+		</script>
+	</component>
+</package>

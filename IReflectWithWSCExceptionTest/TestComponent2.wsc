@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" ?>
+<?component error="false" debug="false" ?>
+<package>
+
+	<component id="TestComponent2">
+		<registration progid="ETWP.TestComponent2" description="TestComponent2" version="1" />
+
+		<public>
+			<property name="Response" />
+			<method name="Go" />
+
+		</public>
+
+		<script language="VBScript">
+			<![CDATA[
+
+				Dim Response
+			
+				Function Go()
+					Response.Write "Hi (2)!"
+					
+					Response.Redirect "example.com"
+				End Function
+			
+			]]>
+		</script>
+	</component>
+</package>
